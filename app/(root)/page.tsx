@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 
 const Homepage = () => {
   return (
-    <div className="bg-green-500">
-      <h2>selam2</h2>
+    <div className="bg-orange-500">
+      <h2 className="mb-4">SELAMM</h2>
       <Button>Tiklaa2</Button>
     </div>
   );

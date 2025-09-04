@@ -2,11 +2,16 @@
 
 ### VPS Server
 
+- VPS Server bağlan: `ssh root@45.133.178.135`
 - Güncel kodu çek: `git pull`
-- Tekrar build al: `docker-compose up -d --build`
+- Tekrar build al: `docker compose up -d --build`
 
 ### Local
 
-- Sadece ilk seferde build al: `docker-compose up -d --build`
-- Docker container çalıştır(sadece db): `docker-compose up db`
-- Docker container durdur: `docker-compose down`
+- Sadece ilk seferde build al: `docker compose up -d --build`
+- Docker container çalıştır(sadece db): `docker compose up db`
+- Docker container durdur: `docker compose down`
+
+### Docker
+
+- Durum sorgula: `docker ps`
