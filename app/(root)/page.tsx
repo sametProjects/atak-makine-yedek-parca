@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+import ProductList from "@/components/shared/product/product-list";
+import sampleData from "@/db/sample-data";
 
 const Homepage = () => {
   return (
-    <div className="bg-orange-500">
-      <h2 className="mb-4">SELAMM güncellendi</h2>
-      <Button>Tiklaa2</Button>
+    <div className="space-y-8">
+      <h2 className="h2-bold">Latest Products</h2>
+      <ProductList title="Newest Arrivals" data={sampleData.products} />
     </div>
   );
 };
