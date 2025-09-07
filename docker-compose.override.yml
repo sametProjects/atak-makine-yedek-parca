@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  web:
+    profiles: ["disabled"] # localde nextjs docker ile çalışmaz, sen npm run dev kullanacaksın
+
+  db:
+    ports:
+      - "5432:5432" # dışarıya aç ki localhost:5432 ile eriş

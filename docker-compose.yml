@@ -3,24 +3,27 @@ version: "3.8"
 services:
   web:
     build: .
-    container_name: nextjs-app
+    container_name: atak-web
     ports:
       - "3000:3000"
-    # environment:
-    #   - DATABASE_URL=postgres://user:password@db:5432/mydb
-    # depends_on:
-    #   - db
+    environment:
+      - DATABASE_URL=postgresql://atak_user:atak_pass@atak-db:5432/atak_db
+    depends_on:
+      - db
     restart: always
-#   db:
-#     image: postgres:15
-#     container_name: postgres-db
-#     environment:
-#       POSTGRES_USER: user
-#       POSTGRES_PASSWORD: password
-#       POSTGRES_DB: mydb
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data
-#     restart: always
 
-# volumes:
-#   postgres_data:
+  db:
+    image: postgres:15
+    container_name: atak-db
+    environment:
+      POSTGRES_USER: atak_user
+      POSTGRES_PASSWORD: atak_pass
+      POSTGRES_DB: atak_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+volumes:
+  postgres_data:

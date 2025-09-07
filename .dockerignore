@@ -1,0 +1,19 @@
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Next.js
+.next
+out
+
+# Git
+.git
+.gitignore
+
+# MacOS
+.DS_Store
+
+# Env files (local dev için olanlar image'e girmesin)
+.env.local
+.env.development

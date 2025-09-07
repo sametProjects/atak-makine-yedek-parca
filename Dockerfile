@@ -1,33 +1,31 @@
-# 1. Build aşaması
-FROM node:18-alpine AS builder
+# 1. Aşama: Build
+FROM node:20-alpine AS builder
 WORKDIR /app
 
-# package.json ve lock dosyasını kopyala
+# package.json ve lock dosyaları kopyalanır
 COPY package*.json ./
 
-# bağımlılıkları yükle
-RUN npm install
+# Production için sadece gerekli paketleri kur
+RUN npm install --frozen-lockfile
 
-# tüm kodu kopyala
+# Proje dosyalarını kopyala
 COPY . .
 
-# production için build
+# Build al
 RUN npm run build
 
-# 2. Runtime aşaması
-FROM node:18-alpine AS runner
+# 2. Aşama: Production Image
+FROM node:20-alpine AS runner
 WORKDIR /app
 
-# sadece production bağımlılıkları
-COPY package*.json ./
-RUN npm install --omit=dev
+# Ortam değişkenlerini production'a al
+ENV NODE_ENV=production
 
-# build klasörünü kopyala
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.mjs ./
-COPY --from=builder /app/package*.json ./
+# Build edilen çıktıyı al
+COPY --from=builder /app ./
 
+# 3000 portunu aç
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Next.js başlat
+CMD ["npm", "run", "start"]
