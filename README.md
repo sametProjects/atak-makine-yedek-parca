@@ -26,3 +26,11 @@
 ### Prisma
 
 - Dosyada oluşturduğun datayı veritabanına atma: `npx tsx ./db/seed`
+
+### PostgreSQL
+
+- Bağlanmak istediğin veritabanı bilgilerini gir: `docker exec -it <container_adi> psql -U <kullanici_adi> -d <veritabani_adi>`
+- Tüm veritabanlarını listele: `\l`
+- Mevcut veritabanındaki tabloları listele: `\dt`
+- Product tablosundaki 5 elemanı gör: `SELECT * FROM "Product" LIMIT 5`
+- Postgreden çık: `\q`

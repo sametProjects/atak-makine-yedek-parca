@@ -11,6 +11,9 @@ RUN npm install --frozen-lockfile
 # Proje dosyalarını kopyala
 COPY . .
 
+# Prisma client generate
+RUN npx prisma generate
+
 # Build al
 RUN npm run build
 
