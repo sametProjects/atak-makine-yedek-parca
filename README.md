@@ -6,8 +6,9 @@
 - \*Güncel kodu çek: `git pull`
 - docker dosyalarında bir değişiklik yapmış isen ilk önce docker i kapatmalısın: `docker compose down`
 - \*Tekrar build al: `docker compose up -d --build`
-- prisma/schema.prisma dosyan değişmiş ise çalıştır: `docker compose exec web npx prisma migrate deploy`
-- prisma/schema.prisma dosyan değişmiş ise çalıştır: `docker compose exec web npx prisma generate`
+- \*prisma/schema.prisma dosyan değişmiş ise çalıştır: `docker compose exec web npx prisma migrate deploy`
+- Bu komutta var ama bu işi zaten Dockerfile hallediyormuş çalıştırmana gerek yok: `docker compose exec web npx prisma generate`
+- Seed dosyandaki verileri veritabanına eklemek istersen: `docker compose exec web npx tsx ./db/seed.ts`
 
 ### Local
 
@@ -30,7 +31,8 @@
 ### PostgreSQL
 
 - Bağlanmak istediğin veritabanı bilgilerini gir: `docker exec -it <container_adi> psql -U <kullanici_adi> -d <veritabani_adi>`
+- Bağlanmak istediğin veritabanı bilgilerini gir(benim bilgiler): `docker exec -it atak-db psql -U atak_user -d atak_db`
 - Tüm veritabanlarını listele: `\l`
 - Mevcut veritabanındaki tabloları listele: `\dt`
-- Product tablosundaki 5 elemanı gör: `SELECT * FROM "Product" LIMIT 5`
+- Product tablosundaki 5 elemanı gör: `SELECT * FROM "Product" LIMIT 5;`
 - Postgreden çık: `\q`
