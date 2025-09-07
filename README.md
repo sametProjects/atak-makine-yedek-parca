@@ -22,3 +22,7 @@
 ### Docker
 
 - Durum sorgula: `docker ps`
+
+### Prisma
+
+- Dosyada oluşturduğun datayı veritabanına atma: `npx tsx ./db/seed`

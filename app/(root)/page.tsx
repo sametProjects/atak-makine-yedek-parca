@@ -10,7 +10,6 @@ const Homepage = () => {
         data={sampleData.products}
         limit={4}
       />
-      <span>samcoo</span>
     </div>
   );
 };
