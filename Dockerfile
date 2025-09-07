@@ -19,6 +19,7 @@ RUN npx prisma generate
 
 # Build script'ini güncelle - database bağlantısı olmadan build
 ENV SKIP_ENV_VALIDATION=true
+ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
 RUN npm run build
 
 # 3. Aşama: Production Image
