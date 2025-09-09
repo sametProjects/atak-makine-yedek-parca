@@ -16,8 +16,8 @@
 - \*Docker container çalıştır(sadece db): `docker compose up db`
 - Docker container durdur: `docker compose down`
 - \*Nextjs proje çalıştır: `npm run dev`
-- Prisma şemalarında yaptığın değişiklikleri migrate et: `npx prisma migrate dev --name added_xxx`
 - Prisma client kodunu tekrar oluşturur: `npx prisma generate`
+- Prisma şemalarında yaptığın değişiklikleri migrate et: `npx prisma migrate dev --name added_xxx`
 - Prisma studio çalıştır: `npx prisma studio`
 
 ### Docker
