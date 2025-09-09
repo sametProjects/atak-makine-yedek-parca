@@ -8,7 +8,7 @@
 - \*Tekrar build al: `docker compose up -d --build`
 - \*prisma/schema.prisma dosyan değişmiş ise çalıştır: `docker compose exec web npx prisma migrate deploy`
 - Bu komutta var ama bu işi zaten Dockerfile hallediyormuş çalıştırmana gerek yok: `docker compose exec web npx prisma generate`
-- Seed dosyandaki verileri veritabanına eklemek istersen: `docker compose exec web npx tsx ./db/seed.ts`
+- Seed dosyandaki verileri veritabanına ekleme: `docker compose exec web npx tsx ./db/seed.ts`
 
 ### Local
 
@@ -19,6 +19,7 @@
 - Prisma client kodunu tekrar oluşturur: `npx prisma generate`
 - Prisma şemalarında yaptığın değişiklikleri migrate et: `npx prisma migrate dev --name added_xxx`
 - Prisma studio çalıştır: `npx prisma studio`
+- Seed dosyandaki verileri veritabanına ekleme: `npx tsx ./db/seed.ts`
 
 ### Docker
 
