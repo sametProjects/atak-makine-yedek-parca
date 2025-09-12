@@ -12,6 +12,7 @@ services:
       - NEXTAUTH_URL_INTERNAL=http://atak-web:3000
       - NEXTAUTH_SECRET=NXMwysVCTn9BJSvLo9Fzj9R9txe8q33rACToRXGHrAY=
       - NODE_ENV=production
+      - AUTH_TRUST_HOST=true
     depends_on:
       - db
     restart: always
