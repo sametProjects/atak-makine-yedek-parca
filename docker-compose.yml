@@ -8,6 +8,10 @@ services:
       - "3000:3000"
     environment:
       - DATABASE_URL=postgresql://atak_user:atak_pass@atak-db:5432/atak_db
+      - NEXTAUTH_URL=http://45.133.178.135:3000
+      - NEXTAUTH_URL_INTERNAL=http://atak-web:3000
+      - NEXTAUTH_SECRET=NXMwysVCTn9BJSvLo9Fzj9R9txe8q33rACToRXGHrAY=
+      - NODE_ENV=production
     depends_on:
       - db
     restart: always
