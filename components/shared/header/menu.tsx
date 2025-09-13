@@ -18,8 +18,7 @@ const Menu = () => {
         <nav className="md:flex hidden w-full max-w-xs gap-1">
           <ModeToggle />
           <Button asChild variant="ghost">
-            {/* /cart olmasi gerekiyor */}
-            <Link href="/">
+            <Link href="/cart">
               <ShoppingCart />
               Cart
             </Link>
@@ -35,8 +34,7 @@ const Menu = () => {
               <SheetTitle>Menu</SheetTitle>
               <ModeToggle />
               <Button asChild variant="ghost">
-                {/* /cart olmasi gerekiyor */}
-                <Link href="/">
+                <Link href="/cart">
                   <ShoppingCart />
                   Cart
                 </Link>
