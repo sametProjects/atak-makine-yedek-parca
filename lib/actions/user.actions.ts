@@ -4,6 +4,7 @@ import { signIn, signOut } from "@/auth";
 import { signInFormSchema, signUpFormSchema } from "../validators";
 import { hashSync } from "bcrypt-ts-edge";
 import { prisma } from "@/db/prisma";
+import { formatError } from "../utils";
 
 function isRedirectError(error: unknown): boolean {
   return error instanceof Error && error.message === "NEXT_REDIRECT";
@@ -72,7 +73,7 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
 
     return {
       success: false,
-      message: "User was not crated",
+      message: formatError(error),
     };
   }
 }
