@@ -2,7 +2,6 @@ import { compareSync } from "bcrypt-ts-edge";
 import type { NextAuthConfig } from "next-auth";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-
 import { prisma } from "@/db/prisma";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
@@ -91,6 +90,7 @@ export const config = {
 
       return token;
     },
+    // authorized() fonksiyonu videoda burada eklemiş ama bende hata verdi. middleware.ts de ekledim
   },
 } satisfies NextAuthConfig;
 
